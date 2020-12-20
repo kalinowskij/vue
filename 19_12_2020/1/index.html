@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание №1</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="uk-padding-large">
+        <div class="uk-margin">
+            <form class="uk-search uk-search-default">
+                <span class="uk-search-icon-flip" uk-search-icon></span>
+                <input v-model="string" class="uk-search-input" type="search" placeholder="Search...">
+            </form>
+        </div>
+        <ul class="uk-list uk-list-divider">
+            <li v-for="article in getArticles()">
+                <h3>{{article.title}}<img @click="alert('Вы нажали на')" width="200" height="50" :src="article.img"></h3>
+
+                <p>{{article.description}} <a target="_blank" :href="article.url">Подробнее...</a></p>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<script src="vue.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

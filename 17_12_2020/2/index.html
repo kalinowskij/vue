@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание №1</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="uk-margin-medium-top">
+        <ul class="uk-flex-center" uk-tab>
+            <li v-for="(tab, index) in contents"><a href="#" @click="select(index)">{{tab.title}}</a></li>
+        </ul>
+    </div>
+    <div v-if="activeContent" class="uk-card uk-card-default uk-card-body">
+        <h3 class="uk-card-title">{{activeContent.title}}</h3>
+        <p>{{activeContent.content}}</p>
+    </div>
+</div>
+<script src="vue.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
