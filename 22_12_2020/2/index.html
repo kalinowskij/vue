@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание №2</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css"/>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+<div id="app" class="uk-padding-large">
+    <div class="uk-slider-container-offset" uk-slider>
+
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+            <ul class="uk-slider-items uk-child-width-1-4@s uk-grid">
+                <li v-for="item of items" :key="item.id">
+                    <div class="uk-card uk-card-default uk-background-secondary">
+                        <div class="uk-card-body">
+                            <h3 style="color: honeydew" class="uk-card-title">Плотин</h3>
+                            <p style="color: honeydew">{{item.title}}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+        </div>
+
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+    </div>
+</div>
+<script src="../../js/vue.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

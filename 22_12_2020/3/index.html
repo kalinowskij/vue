@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание №3</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css"/>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+<div id="app" class="uk-padding-large">
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <a class="uk-form-icon uk-form-icon-flip" uk-icon="icon: plus" @click.prevent="addImage()"></a>
+            <input class="uk-input uk-form-width-large" v-model = newImageLink type="text">
+        </div>
+    </div>
+    <div class="uk-child-width-1-5@m" uk-grid uk-lightbox="animation: slide">
+        <div v-for="image of images" :key="image.id" >
+            <image-component v-bind:image="image" v-on:remove="removeImage"></image-component>
+        </div>
+    </div>
+
+</div>
+<script src="../../js/vue.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

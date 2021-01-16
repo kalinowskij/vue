@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание №1</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="uk-margin-medium-top">
+        <ul class="uk-flex-center" uk-tab>
+            <li v-for="component in components"><a href="#" @click="currentComponent = component.component">{{component.title}}</a></li>
+        </ul>
+    </div>
+    <component v-bind:is="currentComponent" class="uk-card uk-card-default uk-card-body"></component>
+</div>
+<script src="../../js/vue.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

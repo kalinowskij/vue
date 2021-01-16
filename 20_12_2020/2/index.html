@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание №2</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css"/>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="uk-text-center uk-padding-medium">
+        <span style="cursor:pointer; margin-left: 20px" uk-icon="table" @click="select('table')"></span>
+        <span style="cursor:pointer; margin-left: 20px" uk-icon="grid" @click="select('grid')"></span>
+    </div>
+    <div v-if="display == 'table'" class="uk-padding-large">
+        <ul class="uk-list uk-list-divider">
+            <li v-for="article in articles">
+                <h3>{{article.title}}<img @click="alert('Вы нажали на')" width="200" height="50" :src="article.img"></h3>
+
+                <p>{{article.description}} <a target="_blank" :href="article.url">Подробнее...</a></p>
+            </li>
+        </ul>
+    </div>
+    <div v-if="display == 'grid'" class="uk-padding-large " uk-grid>
+        <div class="uk-width-1-4@m" v-for="article in articles">
+            <div class="uk-card uk-card-default uk-height-auto uk-card-small uk-margin-large"  >
+                <div class="uk-card-header">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <div class="uk-width-auto">
+                            <img class="uk-border-circle" width="120" height="160" :src="article.img">
+                        </div>
+                        <div class="uk-width-expand">
+                            <h3 class="uk-card-title uk-margin-remove-bottom">{{article.title}}</h3>
+                            <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                    <p>{{article.description}}</p>
+                </div>
+                <div class="uk-card-footer">
+                    <a  target="_blank" :href="article.url" class="uk-button uk-button-text">Подробнее...</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<script src="../../js/vue.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
